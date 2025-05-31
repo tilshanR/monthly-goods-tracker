@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Monthly Goods Tracker {% endblock %}</title>
+    </head>
+    <body>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'add_item' %}">Add Monthly Goods</a>
+            <a href="{% url 'monthly_list' %}">See Previous Monthly Goods</a>
+        </nav>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
