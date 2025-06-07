@@ -11,3 +11,12 @@ class MonthlyEntry(models.Model):
     quantity=models.PositiveBigIntegerField()
     price=models.DecimalField(max_digits=10, decimal_places=2)
     month=models.DateField()
+
+class MonthlyGood(models.Model):
+    item=models.ForeignKey('Item',on_delete=models.CASCADE)
+    quantity=models.PositiveBigIntegerField()
+    price=models.DecimalField(max_digits=10,decimal_places=2)
+    month=models.DateField
+
+    def __str__(self):
+        return f"{self.item.name} - {self.month}"
